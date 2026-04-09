@@ -2,12 +2,36 @@ function encrypt(text, keys) {
   if (text != null) {
     text = String(text);
   }
+  let encryptedtext = "";
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    const charCode = char.charCodeAt(0);
+    const encryptedCharCode = (charCode * keys[1] + keys[0]) % 26;
+    if (encryptedCharCode < 0) {
+      encryptedCharCode += 26;
+    }
+    const encryptedChar = String.fromCharCode(encryptedCharCode);
+    encryptedtext += encryptedChar;
+  }
+  return encryptedtext;
 }
 
 function decrypt(text, keys) {
   if (text != null) {
     text = String(text);
   }
+  let decryptedtext = "";
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    const charCode = char.charCodeAt(0);
+    const decryptedCharCode = ((charCode - keys[0]) * modInverse(keys[1])) % 26;
+    if (decryptedCharCode < 0) {
+      decryptedCharCode += 26;
+    }
+    const decryptedChar = String.fromCharCode(decryptedCharCode);
+    decryptedtext += decryptedChar;
+  }
+  return decryptedtext;
 }
 
 function generateKeys() {
