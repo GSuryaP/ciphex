@@ -1,16 +1,22 @@
 {
-  "name": "cipherly",
+  "name": "ciphex",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "publishConfig": {
+    "access": "public"
+  },  
   "keywords": [
     "cipher",
     "encrypt",
     "decrypt"
   ],
   "author": "Rohan S Mirjankar",
-  "license": "ISC",
-  "description": "Encrpyts and Decrypts text"
+  "license": "MIT",
+  "description": "Encrpyts and Decrypts text",
+  "files": [
+    "index.js"
+  ]
 }
