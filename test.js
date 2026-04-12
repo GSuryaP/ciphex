@@ -1,6 +1,6 @@
 const { encrypt, decrypt, generateKeys } = require("./index");
 
-sample = "hello world 1 2 3";
+sample = "hello world 1 2 3 booinoii uhiugo 4762#U##%H%I8t";
 keys = generateKeys();
 encryptedtext = encrypt(sample, keys);
 decryptedtext = decrypt(encryptedtext, keys);
